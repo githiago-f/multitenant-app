@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "./dist",                       /* Redirect output structure to the directory. */
+    "baseUrl": "./src",                       /* Base directory to resolve non-absolute module names. */
+    "typeRoots": [
+      "./src/@types",
+      "./node_modules/@types"
+    ],                                        /* List of folders to include type definitions from. */
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
