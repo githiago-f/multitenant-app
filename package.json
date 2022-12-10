@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "gateway": "pnpm -F \"./api/gateway\"",
+    "tenant-manager": "pnpm -F \"./api/tenant-manager\""
+  }
+}

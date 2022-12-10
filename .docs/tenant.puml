@@ -1,0 +1,42 @@
+@startuml "tenant_domain_usecases"
+title "Tenant Domain - usecases"
+
+usecase "Criar novo tenant" as criarSite
+usecase "Alterar configurações\n visuais do tenant" as configVis
+usecase "Criar configurações\n customizadas" as createConfig
+usecase "Alterar Status do tenant" as updateStatus
+
+actor user
+
+criarSite <.up. configVis : <<includes>>
+criarSite <.up. createConfig : <<includes>>
+criarSite <.up. updateStatus : <<includes>>
+user -- configVis
+user -- createConfig
+user -- updateStatus
+
+@enduml
+
+@startuml "tenant_domain_classes"
+title "Tenant Domain - classes"
+
+class Tenant {
+  - id: UUID
+  - name: String
+  - domain: String
+}
+
+class ConfigGroup {
+  - name: String
+}
+
+Tenant "1" -- "0..n" ConfigGroup
+
+class ConfigItem {
+  - key: String
+  - value: String
+}
+
+ConfigGroup "1" -- "0..n" ConfigItem
+
+@enduml
